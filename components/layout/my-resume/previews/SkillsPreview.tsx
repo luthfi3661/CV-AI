@@ -13,7 +13,7 @@ const SkillsPreview = () => {
           color: formData?.themeColor || themeColors[0],
         }}
       >
-        Skill{formData?.skills.length > 1 ? "s" : ""}
+        Keahlian{formData?.skills.length > 1 ? "s" : ""}
       </h2>
       <hr
         style={{

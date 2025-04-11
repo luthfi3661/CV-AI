@@ -108,9 +108,9 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
       formData?.education[index]?.major === ""
     ) {
       toast({
-        title: "Uh Oh! Something went wrong.",
+        title: "Error! Ada yang salah.",
         description:
-          "Please enter the name of institute, degree and major to generate description.",
+          "Mohon masukan nama sekolah/institusi dan jurusan anda.",
         variant: "destructive",
         className: "bg-white border-2",
       });
@@ -147,13 +147,13 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
 
     if (result.success) {
       toast({
-        title: "Information saved.",
-        description: "Educational details updated successfully.",
+        title: "Informasi disimpan.",
+        description: "Detail pendidikan berhasil diubah.",
         className: "bg-white",
       });
     } else {
       toast({
-        title: "Uh Oh! Something went wrong.",
+        title: "Error! Ada yang salah.",
         description: result?.error,
         variant: "destructive",
         className: "bg-white",
@@ -167,10 +167,10 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
     <div>
       <div className="p-5 shadow-lg rounded-lg border-t-primary-700 border-t-4 bg-white">
         <h2 className="text-lg font-semibold leading-none tracking-tight">
-          Education
+          Pendidikan
         </h2>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          Add your educational details
+          Tambah data pendidikan
         </p>
 
         {educationList.map((item: any, index: number) => (
@@ -178,7 +178,7 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
             <div className="grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg">
               <div className="col-span-2 space-y-2">
                 <label className="text-slate-700 font-semibold">
-                  Name of Institute:
+                  Nama sekolah/institusi:
                 </label>
                 <Input
                   name="universityName"
@@ -188,7 +188,7 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-slate-700 font-semibold">Degree:</label>
+                <label className="text-slate-700 font-semibold">Tingkat:</label>
                 <Input
                   name="degree"
                   onChange={(e) => handleChange(e, index)}
@@ -197,7 +197,7 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-slate-700 font-semibold">Major:</label>
+                <label className="text-slate-700 font-semibold">Jurusan:</label>
                 <Input
                   name="major"
                   onChange={(e) => handleChange(e, index)}
@@ -207,7 +207,7 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
               </div>
               <div className="space-y-2">
                 <label className="text-slate-700 font-semibold">
-                  Start Date:
+                  Tanggal mulai:
                 </label>
                 <Input
                   type="date"
@@ -219,7 +219,7 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
               </div>
               <div className="space-y-2">
                 <label className="text-slate-700 font-semibold">
-                  End Date:
+                  Tanggal selesai:
                 </label>
                 <Input
                   type="date"
@@ -232,7 +232,7 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
               <div className="col-span-2 space-y-2">
                 <div className="flex justify-between items-end mt-2">
                   <label className="text-slate-700 font-semibold">
-                    Description:
+                    Deskripsi:
                   </label>
                   <Button
                     variant="outline"
@@ -249,7 +249,7 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
                     ) : (
                       <Brain className="h-4 w-4" />
                     )}{" "}
-                    Generate from AI
+                    Tanyakan ke AI
                   </Button>
                 </div>
                 <Textarea
@@ -270,14 +270,14 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
               onClick={AddNewEducation}
               className="text-primary"
             >
-              <Plus className="size-4 mr-2" /> Add More
+              <Plus className="size-4 mr-2" /> Tambah lagi
             </Button>
             <Button
               variant="outline"
               onClick={RemoveEducation}
               className="text-primary"
             >
-              <Minus className="size-4 mr-2" /> Remove
+              <Minus className="size-4 mr-2" /> Hapus
             </Button>
           </div>
           <Button
@@ -287,10 +287,10 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
           >
             {isLoading ? (
               <>
-                <Loader2 size={20} className="animate-spin" /> &nbsp; Saving
+                <Loader2 size={20} className="animate-spin" /> &nbsp; Menyimpan
               </>
             ) : (
-              "Save"
+              "Simpan"
             )}
           </Button>
         </div>
@@ -298,7 +298,7 @@ const EducationForm = ({ params }: { params: { id: string } }) => {
 
       {aiGeneratedDescriptionList.length > 0 && (
         <div className="my-5" ref={listRef}>
-          <h2 className="font-bold text-lg">Suggestions</h2>
+          <h2 className="font-bold text-lg">Saran dari AI</h2>
           {aiGeneratedDescriptionList?.map((item: any, index: number) => (
             <div
               key={index}

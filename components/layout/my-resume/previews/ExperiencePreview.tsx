@@ -13,7 +13,7 @@ const ExperiencePreview = () => {
           color: formData?.themeColor || themeColors[0],
         }}
       >
-        Professional Experience
+        Pengalaman Kerja
       </h2>
       <hr
         style={{

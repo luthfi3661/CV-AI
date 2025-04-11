@@ -48,7 +48,7 @@ const ResumeEditForm = ({
               size="sm"
               onClick={() => setActiveFormIndex(activeFormIndex - 1)}
             >
-              <ArrowLeft /> Prev
+              <ArrowLeft /> Sebelumnya
             </Button>
           )}
           <Button
@@ -113,7 +113,7 @@ const ResumeEditForm = ({
                   router.push("/my-resume/" + params.id + "/view");
                 } else {
                   toast({
-                    title: "Uh Oh! Something went wrong.",
+                    title: "Error! Ada yang salah.",
                     description:
                       updateResult?.error ||
                       experienceResult?.error ||
@@ -130,17 +130,17 @@ const ResumeEditForm = ({
               <>
                 {isLoading ? (
                   <>
-                    Finishing &nbsp; <Loader2 className="size-5 animate-spin" />
+                    Menyelesaikan &nbsp; <Loader2 className="size-5 animate-spin" />
                   </>
                 ) : (
                   <>
-                    Finish <CheckCircle2 className="size-5" />
+                    Selesai <CheckCircle2 className="size-5" />
                   </>
                 )}
               </>
             ) : (
               <>
-                Next <ArrowRight />
+                Berikutnya <ArrowRight />
               </>
             )}
           </Button>

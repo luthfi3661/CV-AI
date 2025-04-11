@@ -13,7 +13,7 @@ const EducationalPreview = () => {
           color: formData?.themeColor || themeColors[0],
         }}
       >
-        Education
+        Pendidikan
       </h2>
       <hr
         style={{

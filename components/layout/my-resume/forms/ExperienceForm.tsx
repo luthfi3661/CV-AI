@@ -99,9 +99,9 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
       formData?.experience[index]?.companyName === ""
     ) {
       toast({
-        title: "Uh Oh! Something went wrong.",
+        title: "Error! Ada yang salah.",
         description:
-          "Please enter the position title and company name to generate summary.",
+          "Mohon masukan jabatan dan nama perusahaan anda.",
         variant: "destructive",
         className: "bg-white border-2",
       });
@@ -138,13 +138,13 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
 
     if (result.success) {
       toast({
-        title: "Information saved.",
-        description: "Professional experience updated successfully.",
+        title: "Informasi disimpan.",
+        description: "Pengalaman kerja berhasil diubah.",
         className: "bg-white",
       });
     } else {
       toast({
-        title: "Uh Oh! Something went wrong.",
+        title: "Error! Ada yang salah.",
         description: result?.error,
         variant: "destructive",
         className: "bg-white",
@@ -158,10 +158,10 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
     <div>
       <div className="p-5 shadow-lg rounded-lg border-t-primary-700 border-t-4 bg-white">
         <h2 className="text-lg font-semibold leading-none tracking-tight">
-          Professional Experience
+          Pengalaman Kerja
         </h2>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          Add your previous job experiences
+          Tambahkan pengalaman kerja anda
         </p>
 
         <div className="mt-5">
@@ -170,7 +170,7 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
               <div className="grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg">
                 <div className="space-y-2">
                   <label className="text-slate-700 font-semibold">
-                    Position Title:
+                    Jabatan:
                   </label>
                   <Input
                     name="title"
@@ -181,7 +181,7 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-slate-700 font-semibold">
-                    Company Name:
+                    Nama Perusahaan:
                   </label>
                   <Input
                     name="companyName"
@@ -191,7 +191,7 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-slate-700 font-semibold">City:</label>
+                  <label className="text-slate-700 font-semibold">Kota:</label>
                   <Input
                     name="city"
                     onChange={(event) => handleChange(index, event)}
@@ -200,7 +200,7 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-slate-700 font-semibold">State:</label>
+                  <label className="text-slate-700 font-semibold">Provinsi:</label>
                   <Input
                     name="state"
                     onChange={(event) => handleChange(index, event)}
@@ -210,7 +210,7 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-slate-700 font-semibold">
-                    Start Date:
+                    Tanggal Mulai:
                   </label>
                   <Input
                     type="date"
@@ -222,7 +222,7 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-slate-700 font-semibold">
-                    End Date:
+                    Tanggal Selesai:
                   </label>
                   <Input
                     type="date"
@@ -235,7 +235,7 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
                 <div className="col-span-2 space-y-2">
                   <div className="flex justify-between items-end">
                     <label className=" text-slate-700 font-semibold">
-                      Summary:
+                      Rincian:
                     </label>
                     <Button
                       variant="outline"
@@ -252,7 +252,7 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
                       ) : (
                         <Brain className="h-4 w-4" />
                       )}{" "}
-                      Generate from AI
+                      Tanyakan ke AI
                     </Button>
                   </div>
                   <RichTextEditor
@@ -273,14 +273,14 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
               onClick={AddNewExperience}
               className="text-primary"
             >
-              <Plus className="size-4 mr-2" /> Add More
+              <Plus className="size-4 mr-2" /> Tambah lagi
             </Button>
             <Button
               variant="outline"
               onClick={RemoveExperience}
               className="text-primary"
             >
-              <Minus className="size-4 mr-2" /> Remove
+              <Minus className="size-4 mr-2" /> Hapus
             </Button>
           </div>
           <Button
@@ -290,10 +290,10 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
           >
             {isLoading ? (
               <>
-                <Loader2 size={20} className="animate-spin" /> &nbsp; Saving
+                <Loader2 size={20} className="animate-spin" /> &nbsp; Menyimpan
               </>
             ) : (
-              "Save"
+              "Simpan"
             )}
           </Button>
         </div>
@@ -301,7 +301,7 @@ const ExperienceForm = ({ params }: { params: { id: string } }) => {
 
       {aiGeneratedSummaryList.length > 0 && (
         <div className="my-5" ref={listRef}>
-          <h2 className="font-bold text-lg">Suggestions</h2>
+          <h2 className="font-bold text-lg">Saran dari AI</h2>
           {aiGeneratedSummaryList?.map((item: any, index: number) => (
             <div
               key={index}

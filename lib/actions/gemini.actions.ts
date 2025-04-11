@@ -35,8 +35,8 @@ async function askGemini(prompt: string) {
 export async function generateSummary(jobTitle: string) {
   const prompt =
     jobTitle && jobTitle !== ""
-      ? `Given the job title '${jobTitle}', provide a summary for three experience levels: Senior, Mid Level, and Fresher. Each summary should be 3-4 lines long and include the experience level and the corresponding summary in JSON format. The output should be an array of objects, each containing 'experience_level' and 'summary' fields. Ensure the summaries are tailored to each experience level.`
-      : `Create a 3-4 line summary about myself for my resume, emphasizing my personality, social skills, and interests outside of work. The output should be an array of JSON objects, each containing 'experience_level' and 'summary' fields representing Active, Average, and Lazy personality traits. Use example hobbies if needed but do not insert placeholders for me to fill in.`;
+      ? `Berdasarkan jabatan pekerjaan '${jobTitle}', Berikan ringkasan untuk tiga tingkat pengalaman: Senior, Mid Level, and Fresher. Setiap ringkasan harus terdiri dari 3-4 baris dan mencakup tingkat pengalaman serta ringkasan yang sesuai dalam format JSON. Output harus berupa array objek, masing-masing berisi bidang 'experience_level' dan 'summary'. Pastikan ringkasan disesuaikan dengan setiap tingkat pengalaman`
+      : `Buatlah summary tentang diri saya sebanyak 3–4 baris untuk dimasukkan ke dalam resume, dengan menekankan kepribadian saya, keterampilan sosial, dan minat di luar pekerjaan. Hasilnya harus berupa array objek JSON, masing-masing berisi bidang 'experience_level' dan 'summary' yang mewakili sifat kepribadian Aktif, Rata-rata, dan Malas. Gunakan contoh hobi jika diperlukan, tetapi jangan menyisipkan kolom kosong untuk diisi sendiri.`;
 
   const result = await askGemini(prompt);
 
@@ -44,7 +44,7 @@ export async function generateSummary(jobTitle: string) {
 }
 
 export async function generateEducationDescription(educationInfo: string) {
-  const prompt = `Based on my education at ${educationInfo}, provide personal descriptions for three levels of curriculum activities: High Activity, Medium Activity, and Low Activity. Each description should be 3-4 lines long and written from my perspective, reflecting on past experiences. The output should be an array of JSON objects, each containing 'activity_level' and 'description' fields. Please include a subtle hint about my good (but not the best) results.`;
+  const prompt = `Berdasarkan pendidikan saya di ${educationInfo}, Berikan deskripsi pribadi untuk tiga tingkat aktivitas kurikulum: Aktivitas Tinggi, Aktivitas Sedang, dan Aktivitas Rendah. Setiap deskripsi harus terdiri dari 3-4 baris dan ditulis dari sudut pandang saya, merefleksikan pengalaman-pengalaman masa lalu. Outputnya harus berupa array objek JSON, yang masing-masing berisi field 'activity_level' dan 'description. Mohon sertakan petunjuk halus tentang hasil saya yang baik (meskipun bukan yang terbaik).`;
 
   const result = await askGemini(prompt);
 
@@ -52,9 +52,10 @@ export async function generateEducationDescription(educationInfo: string) {
 }
 
 export async function generateExperienceDescription(experienceInfo: string) {
-  const prompt = `Given that I have experience working as ${experienceInfo}, provide a summary of three levels of activities I performed in that position, preferably as a list: High Activity, Medium Activity, and Low Activity. Each summary should be 3-4 lines long and written from my perspective, reflecting on my past experiences in that workplace. The output should be an array of JSON objects, each containing 'activity_level' and 'description' fields. You can include <b>, <i>, <u>, <s>, <blockquote>, <ul>, <ol>, and <li> to further enhance the descriptions. Use example work samples if needed, but do not insert placeholders for me to fill in.`;
+  const prompt = `Mengingat saya memiliki pengalaman bekerja sebagai ${experienceInfo}, Berikan ringkasan dari tiga tingkat aktivitas yang saya lakukan dalam posisi tersebut,  sebaiknya dalam bentuk daftar: Aktivitas Tinggi, Aktivitas Sedang, dan Aktivitas Rendah. Setiap ringkasan harus terdiri dari 3-4 baris dan ditulis dari sudut pandang saya, Merefleksikan pengalaman saya di tempat kerja tersebut. Outputnya harus berupa array objek JSON, masing-masing berisi field 'activity_level' dan 'description'. Anda dapat menyertakan <b>, <i>, <u>, <s>, <blockquote>, <ul>, <ol>, dan <li> untuk memperkaya deskripsi. Gunakan contoh pekerjaan jika diperlukan, tetapi jangan menyisipkan kolom kosong untuk diisi sendiri.`;
 
   const result = await askGemini(prompt);
 
   return JSON.parse(result);
 }
+

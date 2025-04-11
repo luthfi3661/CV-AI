@@ -18,9 +18,9 @@ const EditResume = async ({ params }: { params: { id: string } }) => {
     <PageWrapper>
       <Header />
       <div className="my-10 mx-10 md:mx-20 lg:mx-36">
-        <h2 className="text-center text-2xl font-bold">Edit Your Resume</h2>
+        <h2 className="text-center text-2xl font-bold">Mulai Buat CV</h2>
         <p className="text-center text-gray-600">
-          Please provide the necessary information for your resume.
+        Silakan berikan informasi yang diperlukan untuk CV Anda.
         </p>
       </div>
       <ResumeEditor params={params} userId={user?.id} />

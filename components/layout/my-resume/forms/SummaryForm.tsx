@@ -65,13 +65,13 @@ const SummaryForm = ({ params }: { params: { id: string } }) => {
 
     if (result.success) {
       toast({
-        title: "Information saved.",
-        description: "Summary updated successfully.",
+        title: "Informasi disimpan.",
+        description: "Rincian berhasil diubah.",
         className: "bg-white",
       });
     } else {
       toast({
-        title: "Uh Oh! Something went wrong.",
+        title: "Error! Ada yang salah.",
         description: result?.error,
         variant: "destructive",
         className: "bg-white",
@@ -85,15 +85,15 @@ const SummaryForm = ({ params }: { params: { id: string } }) => {
     <div>
       <div className="p-5 shadow-lg rounded-lg border-t-primary-700 border-t-4 bg-white">
         <h2 className="text-lg font-semibold leading-none tracking-tight">
-          Summary
+          Rincian
         </h2>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          Add summary about your job
+          Tambah rincian tentang pekerjaan atau pendidikan anda
         </p>
 
         <form className="mt-5 space-y-2" onSubmit={onSave}>
           <div className="flex justify-between items-end">
-            <label className=" text-slate-700 font-semibold">Summary:</label>
+            <label className=" text-slate-700 font-semibold">Rincian:</label>
             <Button
               variant="outline"
               onClick={() => {
@@ -109,7 +109,7 @@ const SummaryForm = ({ params }: { params: { id: string } }) => {
               ) : (
                 <Brain className="h-4 w-4" />
               )}{" "}
-              Generate from AI
+              Tanyakan ke AI
             </Button>
           </div>
           <Textarea
@@ -127,10 +127,10 @@ const SummaryForm = ({ params }: { params: { id: string } }) => {
             >
               {isLoading ? (
                 <>
-                  <Loader2 size={20} className="animate-spin" /> &nbsp; Saving
+                  <Loader2 size={20} className="animate-spin" /> &nbsp; Menyimpan
                 </>
               ) : (
-                "Save"
+                "Simpan"
               )}
             </Button>
           </div>
@@ -139,7 +139,7 @@ const SummaryForm = ({ params }: { params: { id: string } }) => {
 
       {aiGeneratedSummaryList.length > 0 && (
         <div className="my-5" ref={listRef}>
-          <h2 className="font-bold text-lg">Suggestions</h2>
+          <h2 className="font-bold text-lg">Saran dari AI</h2>
           {aiGeneratedSummaryList?.map((item: any, index: number) => (
             <div
               key={index}

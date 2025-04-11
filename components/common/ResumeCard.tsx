@@ -62,15 +62,15 @@ const ResumeCard = ({
 
     if (result.success) {
       toast({
-        title: "Information saved.",
-        description: "Resume deleted successfully.",
+        title: "Informasi disimpan.",
+        description: "CV berhasil dihapus.",
         className: "bg-white",
       });
 
       refreshResumes();
     } else {
       toast({
-        title: "Uh Oh! Something went wrong.",
+        title: "Error! Ada yang salah.",
         description: result?.error,
         variant: "destructive",
         className: "bg-white",
@@ -112,7 +112,7 @@ const ResumeCard = ({
                 router.push("/my-resume/" + myResume.resumeId + "/edit")
               }
             >
-              Edit
+              Ubah
             </DropdownMenuItem>
 
             <DropdownMenuItem
@@ -120,11 +120,11 @@ const ResumeCard = ({
                 router.push("/my-resume/" + myResume.resumeId + "/view")
               }
             >
-              View
+              Lihat
             </DropdownMenuItem>
 
             <DropdownMenuItem onClick={() => setOpenAlert(true)}>
-              Delete
+              Hapus
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -133,10 +133,9 @@ const ResumeCard = ({
       <AlertDialog open={openAlert}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogTitle>Apakah anda yakin?</AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our server.
+              Tindakan ini tidak dapat dibatalkan. Ini akan menghapus CV AI anda dan semua data anda.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -145,15 +144,15 @@ const ResumeCard = ({
               disabled={isLoading}
               className="no-focus"
             >
-              Cancel
+              Batal
             </AlertDialogCancel>
             <AlertDialogAction onClick={onDelete} disabled={isLoading}>
               {isLoading ? (
                 <>
-                  <Loader2 size={20} className="animate-spin" /> &nbsp; Deleting
+                  <Loader2 size={20} className="animate-spin" /> &nbsp; Menghapus
                 </>
               ) : (
-                "Delete"
+                "Hapus"
               )}
             </AlertDialogAction>
           </AlertDialogFooter>

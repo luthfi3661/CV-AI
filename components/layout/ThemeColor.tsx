@@ -41,13 +41,13 @@ const ThemeColor = ({ params }: { params: { id: string } }) => {
 
     if (result.success) {
       toast({
-        title: "Information saved.",
-        description: "Theme color updated successfully.",
+        title: "Informasi disimpan.",
+        description: "Tema warna berhasil diubah.",
         className: "bg-white",
       });
     } else {
       toast({
-        title: "Uh Oh! Something went wrong.",
+        title: "Error! Ada yang salah.",
         description: result?.error,
         variant: "destructive",
         className: "bg-white",
@@ -60,11 +60,11 @@ const ThemeColor = ({ params }: { params: { id: string } }) => {
       <PopoverTrigger asChild>
         <Button size="sm" className="btn-gradient flex gap-2">
           {" "}
-          <LayoutGrid /> Theme
+          <LayoutGrid /> Tema
         </Button>
       </PopoverTrigger>
       <PopoverContent>
-        <h2 className="mb-3 text-sm font-bold">Select Theme Color</h2>
+        <h2 className="mb-3 text-sm font-bold">Silahkan Pilih Tema</h2>
         <div className="grid grid-cols-5 gap-3">
           {themeColors.map((item, index) => (
             <div

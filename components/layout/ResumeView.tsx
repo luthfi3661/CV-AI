@@ -33,29 +33,25 @@ const FinalResumeView = ({
             {isOwnerView ? (
               <>
                 <h2 className="text-center text-2xl font-bold">
-                  Congrats! Your ultimate AI-generated resume is ready!
+                  Selamat! CV AI anda siap digunakan!
                 </h2>
                 <p className="text-center text-gray-600">
-                  You can now download your resume or share its unique URL with
-                  your friends and family.
+                  Sekarang anda dapat mengunduh CV AI anda dan membagikan link nya.
                 </p>
                 <p className="text-center text-sm text-gray-500 font-light">
-                  For better print quality, adjust your browser's print
-                  settings: save as PDF, disable headers and footers, set
-                  margins to none, and enable background graphics.
+                  Untuk kualitas cetak yang baik, masuk ke setelan lain, nonaktifkan headers dan footers, dan nonaktifkan grafis latar belakang. Simpan sebagai Pdf
                 </p>
               </>
             ) : (
               <>
                 <h2 className="text-center text-2xl font-bold">
-                  Resume Preview
+                  Lihat CV 
                 </h2>
                 <p className="text-center text-gray-600">
-                  You are currently viewing a preview of someone else's resume.
+                Anda sedang melihat pratinjau dari CV AI milik orang lain.
                 </p>
                 <p className="text-center text-sm text-gray-500 font-light">
-                  For the ultimate experience, create your own AI-generated
-                  resume.
+                Untuk pengalaman terbaik, buat CV AI Anda sendiri.
                 </p>
               </>
             )}
@@ -64,7 +60,7 @@ const FinalResumeView = ({
                 className="flex px-12 py-6 gap-2 rounded-full bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-700/30 text-white"
                 onClick={handleDownload}
               >
-                <DownloadIcon className="size-6" /> Download
+                <DownloadIcon className="size-6" /> Unduh
               </Button>
               <RWebShare
                 data={{
@@ -75,7 +71,7 @@ const FinalResumeView = ({
                 onClick={() => console.log("Shared successfully!")}
               >
                 <Button className="flex px-12 py-6 gap-2 rounded-full bg-slate-200 hover:bg-primary-700/20 focus:ring-4 focus:ring-primary-700/30 text-black">
-                  <Share2Icon className="size-6" /> Share URL
+                  <Share2Icon className="size-6" /> Bagikan Link
                 </Button>
               </RWebShare>
             </div>

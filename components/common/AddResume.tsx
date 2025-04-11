@@ -68,7 +68,7 @@ const AddResume = ({ userId }: { userId: string | undefined }) => {
       setIsLoading(false);
 
       toast({
-        title: "Uh Oh! Something went wrong.",
+        title: "Error! Ada yang salah.",
         description: result?.error,
         variant: "destructive",
         className: "bg-white",
@@ -88,10 +88,9 @@ const AddResume = ({ userId }: { userId: string | undefined }) => {
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Create New Resume</DialogTitle>
+            <DialogTitle>Buat CV Baru</DialogTitle>
             <DialogDescription>
-              Enter the title of your resume here. Click create when you're
-              done.
+              Masukan judul untuk CV anda. Tekan Buat untuk melanjutkan.
             </DialogDescription>
           </DialogHeader>
           <Form {...form}>
@@ -106,13 +105,13 @@ const AddResume = ({ userId }: { userId: string | undefined }) => {
                   <FormItem>
                     <FormLabel>
                       <p className="mt-2 mb-3 text-slate-700 font-semibold">
-                        Resume Title:
+                        Judul CV:
                       </p>
                     </FormLabel>
                     <FormControl>
                       <Input
                         type="text"
-                        placeholder="Example: Android Developer Resume"
+                        placeholder="Contoh: Arsitek"
                         className="no-focus"
                         autoComplete="off"
                         {...field}
@@ -129,16 +128,16 @@ const AddResume = ({ userId }: { userId: string | undefined }) => {
                   className="btn-ghost"
                   disabled={isLoading}
                 >
-                  Cancel
+                  Batal
                 </button>
                 <Button type="submit" disabled={isLoading}>
                   {isLoading ? (
                     <>
                       <Loader2 size={20} className="animate-spin" /> &nbsp;
-                      Creating
+                      Membuat
                     </>
                   ) : (
-                    "Create"
+                    "Buat"
                   )}
                 </Button>
               </div>

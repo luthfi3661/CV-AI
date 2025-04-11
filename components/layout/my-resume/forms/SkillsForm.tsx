@@ -77,13 +77,13 @@ const SkillsForm = ({ params }: { params: { id: string } }) => {
 
     if (result.success) {
       toast({
-        title: "Information saved.",
-        description: "Skill sets updated successfully.",
+        title: "Informasi disimpan.",
+        description: "Keahlian berhasil diubah.",
         className: "bg-white",
       });
     } else {
       toast({
-        title: "Uh Oh! Something went wrong.",
+        title: "Error! Ada yang salah.",
         description: result?.error,
         variant: "destructive",
         className: "bg-white",
@@ -96,10 +96,10 @@ const SkillsForm = ({ params }: { params: { id: string } }) => {
   return (
     <div className="p-5 shadow-lg rounded-lg border-t-primary-700 border-t-4 bg-white">
       <h2 className="text-lg font-semibold leading-none tracking-tight">
-        Skill Sets
+        Keahlian
       </h2>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-        Add Your top professional key skills
+        Tambah data keahlian anda
       </p>
 
       <div className="mt-5">
@@ -109,7 +109,7 @@ const SkillsForm = ({ params }: { params: { id: string } }) => {
             className="flex max-lg:flex-col lg:items-end justify-between mb-2 border rounded-lg p-3 space-y-2 lg:space-x-12"
           >
             <div className="space-y-2 w-full">
-              <label className="mt-2 text-slate-700 font-semibold">Name:</label>
+              <label className="mt-2 text-slate-700 font-semibold">Nama:</label>
               <Input
                 className="no-focus mt-2"
                 defaultValue={item.name}
@@ -135,14 +135,14 @@ const SkillsForm = ({ params }: { params: { id: string } }) => {
             onClick={AddNewSkills}
             className="text-primary"
           >
-            <Plus className="size-4 mr-2" /> Add More
+            <Plus className="size-4 mr-2" /> Tambah lagi
           </Button>
           <Button
             variant="outline"
             onClick={RemoveSkills}
             className="text-primary"
           >
-            <Minus className="size-4 mr-2" /> Remove
+            <Minus className="size-4 mr-2" /> Hapus
           </Button>
         </div>
         <Button
@@ -152,10 +152,10 @@ const SkillsForm = ({ params }: { params: { id: string } }) => {
         >
           {isLoading ? (
             <>
-              <Loader2 size={20} className="animate-spin" /> &nbsp; Saving
+              <Loader2 size={20} className="animate-spin" /> &nbsp; Menyimpan
             </>
           ) : (
-            "Save"
+            "Simpan"
           )}
         </Button>
       </div>

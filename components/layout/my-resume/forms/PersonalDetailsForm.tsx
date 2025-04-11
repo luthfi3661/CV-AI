@@ -34,13 +34,13 @@ const PersonalDetailsForm = ({ params }: { params: { id: string } }) => {
 
     if (result.success) {
       toast({
-        title: "Information saved.",
-        description: "Personal details updated successfully.",
+        title: "Informasi disimpan.",
+        description: "Data pribadi berhasil diubah.",
         className: "bg-white",
       });
     } else {
       toast({
-        title: "Uh Oh! Something went wrong.",
+        title: "Error! Ada yang salah.",
         description: result?.error,
         variant: "destructive",
         className: "bg-white",
@@ -53,17 +53,17 @@ const PersonalDetailsForm = ({ params }: { params: { id: string } }) => {
   return (
     <div className="p-5 shadow-lg rounded-lg border-t-primary-700 border-t-4 bg-white">
       <h2 className="text-lg font-semibold leading-none tracking-tight">
-        Personal Details
+        Informasi Pribadi
       </h2>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-        Get Started with the basic information
+        Mulai dengan memberikan informasi dasar
       </p>
 
       <form onSubmit={onSave}>
         <div className="grid grid-cols-2 mt-5 gap-3">
           <div className="space-y-2">
             <label className="mt-2 text-slate-700 font-semibold">
-              First Name:
+              Nama:
             </label>
             <Input
               name="firstName"
@@ -75,7 +75,7 @@ const PersonalDetailsForm = ({ params }: { params: { id: string } }) => {
           </div>
           <div className="space-y-2">
             <label className="mt-2 text-slate-700 font-semibold">
-              Last Name:
+              Nama Belakang:
             </label>
             <Input
               name="lastName"
@@ -87,7 +87,7 @@ const PersonalDetailsForm = ({ params }: { params: { id: string } }) => {
           </div>
           <div className="col-span-2 space-y-2">
             <label className="mt-2 text-slate-700 font-semibold">
-              Job Title:
+              Pekerjaan/Pendidikan:
             </label>
             <Input
               name="jobTitle"
@@ -99,7 +99,7 @@ const PersonalDetailsForm = ({ params }: { params: { id: string } }) => {
           </div>
           <div className="col-span-2 space-y-2">
             <label className="mt-2 text-slate-700 font-semibold">
-              Address:
+              Alamat:
             </label>
             <Input
               name="address"
@@ -110,7 +110,7 @@ const PersonalDetailsForm = ({ params }: { params: { id: string } }) => {
             />
           </div>
           <div className="space-y-2">
-            <label className="mt-2 text-slate-700 font-semibold">Phone:</label>
+            <label className="mt-2 text-slate-700 font-semibold">Telepon:</label>
             <Input
               name="phone"
               required
@@ -138,10 +138,10 @@ const PersonalDetailsForm = ({ params }: { params: { id: string } }) => {
           >
             {isLoading ? (
               <>
-                <Loader2 size={20} className="animate-spin" /> &nbsp; Saving
+                <Loader2 size={20} className="animate-spin" /> &nbsp; Menyimpan
               </>
             ) : (
-              "Save"
+              "Simpan"
             )}
           </Button>
         </div>
